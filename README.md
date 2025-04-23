@@ -35,6 +35,9 @@ Figure -02 HALF Subtractor
 
 **Truthtable**
 
+![image](https://github.com/user-attachments/assets/5e0d3b55-6636-4987-9108-c59bf0062472)
+
+
 **Procedure**
 
 1.	Type the program in Quartus software.
@@ -54,8 +57,41 @@ Figure -02 HALF Subtractor
 
 Developed by: RegisterNumber:*/
 
+    *Half_adder*
+    module halfadd_top(a,b,sum,carry);
+    input a,b;
+    output sum,carry; 
+     assign sum = a^b;
+     assign carry = a & b;
+    endmodule
+
+
+    *Half_subtractor*
+    module halfsub_top(a,b,D,Bo);
+    input a,b;
+    output D,Bo; // Outputs sum and carry for half adder:Outputs difference D,Borrow Bo for half subtractor
+    assign D = a ^ b;
+      assign Bo = ~a & b;
+    endmodule
+
+
+
 **RTL Schematic**
+
+![image](https://github.com/user-attachments/assets/6e6195bb-bd07-4649-b942-7c8d1b154270)
+
 
 **Output/TIMING Waveform**
 
+HALF ADDER:
+
+![image](https://github.com/user-attachments/assets/90a5c516-b277-4446-ba0a-7306f026925b)
+
+HALF SUPTRACTOR:
+
+![image](https://github.com/user-attachments/assets/3a6fceff-e88a-41dc-86a4-4b2d32ccde97)
+
+
 **Result:**
+
+The code is excecuted successfully.
